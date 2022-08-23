@@ -1,13 +1,9 @@
-# Sample Hardhat Project
+This is a todo list smart contract. So what are we trying to achieve?
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+A simple Decentralized To DO List
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+a. Every user will have an id
+b. Store the todos - messages of each user.
+c. We need to keep track of the address of the user
+d. Following the ideology of a CRUD application - we need a smart contract to create, read, and update a list
+d. We can't delete items on the blockchain
