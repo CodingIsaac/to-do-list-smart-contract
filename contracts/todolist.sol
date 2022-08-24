@@ -30,6 +30,10 @@ function toggleCOmpleted(uint _index) external {
 
 }
 
+function deleteTask (uint _index) external {
+    delete todos[_index];
+}
+
 }
 
 
