@@ -4,25 +4,29 @@ pragma solidity ^0.8.9;
 contract ToDoList {
 struct Todo {
     string message;
+    string title;
     bool taskCompleted;
 
 }
 
 Todo[] public todos;
 
-function createToDo(string calldata _message) external {
-    todos.push(Todo ( {
-        message: _message,
-        taskCompleted: false
-
-
-    }));
-
+function createToDo(string calldata _message, string calldata _title) external {
+    Todo memory newTodo;
+    newTodo.message = _message;
+    newTodo.title = _title;
+    newTodo.taskCompleted = false;
+    todos.push(newTodo);
 
 }
+function getTodo() external view returns (Todo[] memory) {
+    return todos;
+}
 
-function updateToDo(uint _index, string calldata _message) external {
-    todos[_index].message = _message;
+function updateToDo(uint _index, string calldata _newMessage, string calldata _newTitle) external {
+    todos[_index].message = _newMessage;
+    todos[_index].title = _newTitle;
+
 }
 
 function toggleCOmpleted(uint _index) external {
